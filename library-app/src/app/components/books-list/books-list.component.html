@@ -1,1 +1,61 @@
-<p>books-list works!</p>
+<div>
+  <div class="d-grid gap-2 d-md-flex">
+    <button class="btn btn-success mb-2" type="button" title="Registrar libro"><i class="bi bi-plus"></i> Registrar libro</button>
+  </div>
+  
+  <ngx-datatable
+    class="bootstrap pb-5"
+    [limit]="8"
+    [rows]="rows"
+    [rowHeight]="50"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+  >
+    <ngx-datatable-column name="Titulo">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <span>{{ value }}</span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Subtitulo">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <span>{{ value }}</span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Autor">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <span>{{ value }}</span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Categoria">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <span>{{ value }}</span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Fecha">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <span>{{ value }}</span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Descripcion">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <span>{{ value }}</span>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Acciones">
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+        <span>
+          <button class="btn btn-primary" type="button" title="Editar libro"><i class="bi bi-pencil-square"></i></button>
+          <button class="btn btn-danger ms-2" type="button" title="Borrar libro"><i class="bi bi-eraser-fill"></i></button>
+        </span>
+      </ng-template>
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+</div>

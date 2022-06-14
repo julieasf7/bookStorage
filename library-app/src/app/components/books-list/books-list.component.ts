@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksListComponent implements OnInit {
 
+  rows = [
+    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
+    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
+    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
+    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
+    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
+    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
+    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
+    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
+    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' }
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
