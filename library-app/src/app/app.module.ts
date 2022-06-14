@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { BooksFormComponent } from './components/books-form/books-form.component';
@@ -14,10 +14,9 @@ import { BooksListComponent } from './components/books-list/books-list.component
   declarations: [
     AppComponent,
     NavigationComponent,
-    BooksFormComponent,
     BooksSearchComponent,
-    BooksHomeComponent,
-    BooksListComponent
+    BooksListComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,

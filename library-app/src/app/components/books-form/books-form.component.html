@@ -1,1 +1,85 @@
-<p>books-form works!</p>
+<div class="container mb-5">
+  <h1 class="mt-5 mb-3">Registrar libro</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-6">
+      <form class="needs-validation" novalidate="">
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="title" class="form-label">Titulo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder=""
+              value=""
+              required=""
+            />
+            <div class="invalid-feedback">El titulo es requerido.</div>
+          </div>
+
+          <div class="col-12">
+            <label for="subtitle" class="form-label">Subtitulo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="subtitle"
+              placeholder=""
+              value=""
+              required=""
+            />
+            <div class="invalid-feedback">El subtitulo es requerido.</div>
+          </div>
+
+          <div class="col-12">
+            <label for="author" class="form-label">Autor</label>
+            <input
+              type="text"
+              class="form-control"
+              id="author"
+              placeholder=""
+              value=""
+              required=""
+            />
+            <div class="invalid-feedback">El autor es requerido.</div>
+          </div>
+
+          <div class="col-12">
+            <label for="category" class="form-label">Categoria</label>
+            <select class="form-select" id="category" required="">
+              <option value="">Seleccione...</option>
+              <option>Terror</option>
+            </select>
+            <div class="invalid-feedback">Seleccione una categoria.</div>
+          </div>
+
+          <div class="col-12">
+            <label for="date" class="form-label">Fecha de publicación</label>
+            <input
+              type="date"
+              class="form-control"
+              id="date"
+              placeholder=""
+              value=""
+              required=""
+            />
+            <div class="invalid-feedback">
+              La fecha de publicación es requerida.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="description" class="form-label">Descripción</label>
+            <textarea class="form-control" id="description" rows="3"></textarea>
+            <div class="invalid-feedback">La descripción es requerida.</div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
