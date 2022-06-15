@@ -11,6 +11,8 @@ import { BooksSearchComponent } from './components/books-search/books-search.com
 import { BooksHomeComponent } from './components/books-home/books-home.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
 
+import { BooksService } from './services/books.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,7 @@ import { BooksListComponent } from './components/books-list/books-list.component
     FormsModule,
     ReactiveFormsModule 
   ],
-  providers: [],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
