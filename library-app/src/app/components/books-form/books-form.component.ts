@@ -11,6 +11,7 @@ import { BooksService } from '../../services/books.service';
 export class BooksFormComponent implements OnInit {
 
   form!:FormGroup;
+  showMsg: boolean = false;
 
   constructor(
     public booksService: BooksService
@@ -34,6 +35,10 @@ export class BooksFormComponent implements OnInit {
   submit(){
     this.booksService.addBook(this.form.value);
     this.ngOnInit();
+
+    this.showMsg= true;
+    setTimeout(() => { this.showMsg= false; }, 5000);
+
     return false;
   }
 

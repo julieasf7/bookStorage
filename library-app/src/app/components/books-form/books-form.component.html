@@ -5,6 +5,11 @@
       <form [formGroup]="form" (ngSubmit)="submit()">
         <div class="row g-3">
           <div class="col-12">
+            <div class="alert alert-success" role="alert" *ngIf="showMsg">
+              El libro se registro de manera exitosa
+            </div>
+          </div>
+          <div class="col-12">
             <label for="title" class="form-label">Titulo</label>
             <input
               formControlName = "title"
