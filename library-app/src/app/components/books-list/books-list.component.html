@@ -58,7 +58,7 @@
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <span>
           <button class="btn btn-primary" type="button" title="Editar libro" [routerLink]="['/update', value]"><i class="bi bi-pencil-square"></i></button>
-          <button class="btn btn-danger ms-2" type="button" title="Borrar libro" [routerLink]="['/']"><i class="bi bi-eraser-fill"></i></button>
+          <button class="btn btn-danger ms-2" type="button" title="Borrar libro" (click) = "delete(value)"><i class="bi bi-eraser-fill"></i></button>
         </span>
       </ng-template>
     </ngx-datatable-column>

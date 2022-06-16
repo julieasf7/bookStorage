@@ -19,4 +19,9 @@ export class BooksListComponent implements OnInit {
     this.rows = this.booksService.getAllBook();
   }
 
+  delete(idBook : number){
+    this.booksService.deleteBook(idBook);
+    this.ngOnInit();
+  }
+
 }

@@ -65,6 +65,26 @@ export class BooksService {
   }
 
   /**
+   * deleteBook
+   * 
+   * Permite eliminar un registro por medio del id 
+   * 
+   * @param idBook 
+   */
+  deleteBook(idBook: number){
+    // Se consulta los datos del item books
+    let books = JSON.parse(localStorage.getItem('books') || '[]');
+    
+    // Se elimina registro con el id indicado
+    books.splice(
+      books.findIndex((m: Book) => m.id == idBook),1
+    );
+
+    // Se settea el objeto actualizado con la informacion del libro
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  /**
    * getAllBook
    * 
    * Permite consulta la lista de libros registrados
