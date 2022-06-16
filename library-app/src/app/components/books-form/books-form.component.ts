@@ -33,6 +33,7 @@ export class BooksFormComponent implements OnInit {
   
   submit(){
     this.booksService.addBook(this.form.value);
+    this.ngOnInit();
     return false;
   }
 

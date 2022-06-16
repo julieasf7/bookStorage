@@ -12,6 +12,12 @@
     [headerHeight]="50"
     [footerHeight]="50"
   >
+  <ngx-datatable-column name="Id" prop="id">
+    <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+      <span>{{ value }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+
     <ngx-datatable-column name="Titulo" prop="title">
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <span>{{ value }}</span>
