@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BooksService } from '../../services/books.service';
+
 @Component({
   selector: 'app-books-list',
   templateUrl: './books-list.component.html',
@@ -7,21 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksListComponent implements OnInit {
 
-  rows = [
-    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
-    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
-    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
-    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
-    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
-    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
-    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
-    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' },
-    { titulo: 'titulo libro', subtitulo: 'subtitulo libro', autor: 'autor libro', categoria: 'categoria libro', fecha: 'fecha libro', descripcion: 'descripcion libro' }
-  ];
+  rows = [];
 
-  constructor() { }
+  constructor(
+    public booksService: BooksService
+  ) { }
 
   ngOnInit(): void {
+    this.rows = this.booksService.getAllBook();
   }
 
 }

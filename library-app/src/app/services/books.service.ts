@@ -11,13 +11,18 @@ export class BooksService {
 
   addBook(book: Book){
     let books = [];
-    if(localStorage.getItem('books') === null){
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books') || '{}');
-    }
 
+    books = JSON.parse(localStorage.getItem('books') || '[]');
     books.push(book);
+
     localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  getAllBook(){
+    let books = [];
+
+    books = JSON.parse(localStorage.getItem('books') || '[]');
+
+    return books;
   }
 }

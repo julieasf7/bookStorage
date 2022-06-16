@@ -12,37 +12,37 @@
     [headerHeight]="50"
     [footerHeight]="50"
   >
-    <ngx-datatable-column name="Titulo">
+    <ngx-datatable-column name="Titulo" prop="title">
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <span>{{ value }}</span>
       </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column name="Subtitulo">
+    <ngx-datatable-column name="Subtitulo" prop="subtitle">
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <span>{{ value }}</span>
       </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column name="Autor">
+    <ngx-datatable-column name="Autor" prop="author">
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <span>{{ value }}</span>
       </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column name="Categoria">
+    <ngx-datatable-column name="Categoria" prop="category">
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <span>{{ value }}</span>
       </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column name="Fecha">
+    <ngx-datatable-column name="Fecha" prop="date">
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <span>{{ value }}</span>
       </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column name="Descripcion">
+    <ngx-datatable-column name="Descripcion" prop="description">
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <span>{{ value }}</span>
       </ng-template>
