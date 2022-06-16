@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: BooksFormComponent
+  },
+  {
+    path: 'update/:id',
+    component: BooksFormComponent
   }
 ];
 

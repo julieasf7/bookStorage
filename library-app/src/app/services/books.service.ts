@@ -17,9 +17,8 @@ export class BooksService {
    * @param book Informacion del libro
    */
   addBook(book: Book){
-    let books = [];
-
     // Se consulta los datos del item books
+    let books = [];
     books = JSON.parse(localStorage.getItem('books') || '[]');
     
     // Se genera el id del registro
@@ -29,12 +28,40 @@ export class BooksService {
       let lastId = books[books.length-1];
       book.id = lastId.id + 1;
     }
-
+    
     // Se adiciona la informacion del nuevo libro
     books.push(book);
 
     // Se settea el objeto actualizado con la informacion del nuevo libro
+      localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  /**
+   * updateBook
+   * 
+   * Permite actualizar la informacion de un libro
+   * @param book 
+   * @param idBook 
+   */
+  updateBook(book: Book, idBook: number){
+    // Se consulta los datos del item books
+    let books = JSON.parse(localStorage.getItem('books') || '[]');
+    
+    // Se elimina registro con el id indicado
+    books.splice(
+      books.findIndex((m: Book) => m.id == idBook),1
+    );
+
+    // Se adiciona la informacion del libro con la informacion actualizada
+    book.id = idBook;
+    books.push(book);
+    
+    // Se organiza la informacion
+    books = books.sort((a: Book,b: Book) => a.id - b.id);
+    
+    // Se settea el objeto actualizado con la informacion del libro
     localStorage.setItem('books', JSON.stringify(books));
+
   }
 
   /**
@@ -51,5 +78,33 @@ export class BooksService {
     books = JSON.parse(localStorage.getItem('books') || '[]');
 
     return books;
+  }
+
+  /**
+   * getForId
+   * 
+   * Permite consultar la informacion de un libro por el id
+   * 
+   * @param idBook 
+   * @returns 
+   */
+  getForId(idBook: number){
+    let books = [];
+    let currentBook = [];
+
+    // Se consulta los datos del item books
+    books = JSON.parse(localStorage.getItem('books') || '[]');
+
+    if(books.length > 0){
+      currentBook = books.find(
+        (m: Book) => m.id == idBook
+      );
+    }
+
+    if(typeof currentBook !== 'undefined'){
+      return currentBook;
+    } else {
+      return null;
+    }
   }
 }
