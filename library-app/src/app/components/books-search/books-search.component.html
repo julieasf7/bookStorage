@@ -1,20 +1,23 @@
-<form class="needs-validation" novalidate="">
+<form [formGroup]="form" (ngSubmit)="search()">
   <div class="row g-3 mt-4">
     <div class="col-12">
       <input
-        type        = "text"
-        class       = "form-control"
-        id          = "bookName"
-        placeholder = "Nombre del libro"
-        value       = ""
-        required    = ""
+        formControlName = "search"
+        maxlength       = "100"
+        placeholder     = "Nombre del libro"
+        type  = "text"
+        class = "form-control"
+        id    = "search"
       />
-      <div class="invalid-feedback">El nombre del libro es requerido.</div>
+      <div *ngIf="f['search'].touched && f['search'].invalid" class="text-danger">
+        <div *ngIf="f['search'].errors && f['search'].errors['required']">El nombre del libro es requerido.</div>
+      </div>
     </div>
   </div>
 
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-danger mt-3" type="submit">Buscar libro</button>
+    <button class="btn btn-danger mt-3" type="submit" [disabled]="!form.valid">Buscar libro</button>
+    <button class="btn btn-light mt-3" type="button" (click)="refresh()">Borrar filtro</button>
   </div>
 
   <hr class="my-4" />

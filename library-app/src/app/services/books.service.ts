@@ -96,7 +96,7 @@ export class BooksService {
 
     // Se consulta los datos del item books
     books = JSON.parse(localStorage.getItem('books') || '[]');
-
+    
     return books;
   }
 
@@ -126,5 +126,29 @@ export class BooksService {
     } else {
       return null;
     }
+  }
+
+  /**
+   * getBookSearch
+   * 
+   * Permite buscar un libro en especifico por el nombre
+   * @param bookName 
+   * @returns 
+   */
+  getBookSearch(bookName: string){
+    let books     = [];
+    let booksList = [];
+
+    // Se consulta los datos del item books
+    books = JSON.parse(localStorage.getItem('books') || '[]');
+
+    if(books.length > 0){
+      // Se busca el libro en la DB local
+      booksList = books.filter(
+        (m: Book) => m.title == bookName
+      );
+    }
+    
+    return booksList;
   }
 }

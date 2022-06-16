@@ -19,6 +19,10 @@ export class BooksListComponent implements OnInit {
     this.rows = this.booksService.getAllBook();
   }
 
+  bookSearch(bookName : string){
+    this.rows = this.booksService.getBookSearch(bookName);
+  }
+
   delete(idBook : number){
     this.booksService.deleteBook(idBook);
     this.ngOnInit();
