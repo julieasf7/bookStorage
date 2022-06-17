@@ -25,7 +25,6 @@
             <label for="title" class="form-label">Titulo</label>
             <input
               formControlName = "title"
-              maxlength       = "100"
               type  = "text"
               class = "form-control"
               id    = "title"
@@ -39,7 +38,6 @@
             <label for="subtitle" class="form-label">Subtitulo</label>
             <input
               formControlName = "subtitle"
-              maxlength       = "100"
               type  = "text"
               class = "form-control"
               id    = "subtitle"
@@ -53,7 +51,6 @@
             <label for="author" class="form-label">Autor</label>
             <input
               formControlName = "author"
-              maxlength       = "100"
               type  = "text"
               class = "form-control"
               id    = "author"
@@ -67,7 +64,6 @@
             <label for="category" class="form-label">Categoria</label>
             <input
               formControlName = "category"
-              maxlength       = "100"
               type  = "text"
               class = "form-control"
               id    = "category"
@@ -92,7 +88,7 @@
 
           <div class="col-12">
             <label for="description" class="form-label">Descripción</label>
-            <textarea class="form-control" id="description" formControlName="description" maxlength="200" rows="3"></textarea>
+            <textarea class="form-control" id="description" formControlName="description" rows="3"></textarea>
             <div *ngIf="f['description'].touched && f['description'].invalid" class="text-danger">
               <div *ngIf="f['description'].errors && f['description'].errors['required']">La descripción es requerida.</div>
             </div>

@@ -166,4 +166,8 @@ export class BooksService {
         )
       );
   }
+
+  getBookForIdApi(bookId: string){
+    return this.http.get(`https://www.googleapis.com/books/v1/volumes/${bookId}`);
+  }
 }

@@ -1,6 +1,6 @@
 import { BooksFormComponent } from './components/books-form/books-form.component';
 import { BooksHomeComponent } from './components/books-home/books-home.component';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -10,6 +10,10 @@ const routes: Routes = [
   },
   {
     path: 'register',
+    component: BooksFormComponent
+  },
+  {
+    path: 'registerApi/:idApi',
     component: BooksFormComponent
   },
   {

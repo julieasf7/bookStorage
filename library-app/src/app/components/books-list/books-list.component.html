@@ -52,7 +52,7 @@
       <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
         <span>
           <a href="#" class="m-2" title="Ver libro" [routerLink]="['/update', value]"><i class="bi bi-receipt-cutoff"></i></a>
-          <a href="#" class="m-2 fs-5" title="Registrar libro" (click) = "delete(value)" *ngIf="dataApi"><i class="bi bi-plus"></i></a>
+          <a href="#" class="m-2 fs-5" title="Registrar libro" [routerLink]="['/registerApi', value]" *ngIf="dataApi"><i class="bi bi-plus"></i></a>
           <a href="#" class="m-2" title="Actualizar libro" [routerLink]="['/update', value]" *ngIf="!dataApi"><i class="bi bi-pencil-square"></i></a>
           <a href="#" class="m-2" title="Eliminar libro" (click) = "delete(value)" *ngIf="!dataApi"><i class="bi bi-trash3"></i></a>
         </span>
