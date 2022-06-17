@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { Book } from '../interface/book';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BooksService {
-  //books!: Book[];
 
-  constructor() { }
+export class BooksService {
+
+  constructor(
+    private http: HttpClient
+  ) { }
 
   /**
    * addBook
@@ -150,5 +155,15 @@ export class BooksService {
     }
     
     return booksList;
+  }
+
+  getBookApi(bookName: string){
+    return this.http
+      .get(`https://www.googleapis.com/books/v1/volumes?q=${bookName}`)
+      .pipe(
+        map(
+          (result:any) => result.items
+        )
+      );
   }
 }

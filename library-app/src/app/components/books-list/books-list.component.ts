@@ -1,3 +1,4 @@
+import { Book } from './../../interface/book';
 import { Component, OnInit } from '@angular/core';
 
 import { BooksService } from '../../services/books.service';
@@ -9,7 +10,7 @@ import { BooksService } from '../../services/books.service';
 })
 export class BooksListComponent implements OnInit {
 
-  rows = [];
+  rows: Book[] = [];
 
   constructor(
     public booksService: BooksService
@@ -21,6 +22,38 @@ export class BooksListComponent implements OnInit {
 
   bookSearch(bookName : string){
     this.rows = this.booksService.getBookSearch(bookName);
+    
+    if(this.rows.length <= 0){
+      let books: Book[] = [];
+      this.booksService.getBookApi(bookName).subscribe(data => {
+        data.forEach((data:any) => {
+          let category = 'N/A';
+          if(data.volumeInfo.categories){
+            category = data.volumeInfo.categories.toString();
+          }
+
+          let author = 'N/A';
+          if(data.volumeInfo.authors){
+            author = data.volumeInfo.authors.toString();
+          }
+
+          let obj = {
+            id          : data.id,
+            title       : data.volumeInfo.title,
+            subtitle    : (data.volumeInfo.subtitle || "N/A"),
+            author      : author,
+            category    : category,
+            date        : data.volumeInfo.publishedDate,
+            description : data.volumeInfo.description
+          };
+
+          books.push(obj);
+        })
+
+        this.rows = books;
+      });
+      
+    }
   }
 
   delete(idBook : number){

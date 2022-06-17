@@ -6,12 +6,11 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { BooksFormComponent } from './components/books-form/books-form.component';
 import { BooksSearchComponent } from './components/books-search/books-search.component';
-import { BooksHomeComponent } from './components/books-home/books-home.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
 
 import { BooksService } from './services/books.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,8 @@ import { BooksService } from './services/books.service';
     AppRoutingModule,
     NgxDatatableModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent]
