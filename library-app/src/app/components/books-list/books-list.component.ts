@@ -11,6 +11,7 @@ import { BooksService } from '../../services/books.service';
 export class BooksListComponent implements OnInit {
 
   rows: Book[] = [];
+  dataApi: boolean = false;
 
   constructor(
     public booksService: BooksService
@@ -25,6 +26,8 @@ export class BooksListComponent implements OnInit {
     
     if(this.rows.length <= 0){
       let books: Book[] = [];
+      this.dataApi = true;
+      
       this.booksService.getBookApi(bookName).subscribe(data => {
         data.forEach((data:any) => {
           let category = 'N/A';
