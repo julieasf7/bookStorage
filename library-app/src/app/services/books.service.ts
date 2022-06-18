@@ -10,6 +10,8 @@ import { map } from 'rxjs';
 
 export class BooksService {
 
+  url : string = 'https://www.googleapis.com/books/v1/volumes';
+
   constructor(
     private http: HttpClient
   ) { }
@@ -157,9 +159,17 @@ export class BooksService {
     return booksList;
   }
 
+  /**
+   * getBookApi
+   * 
+   * Consulta la lista de libros en el API por el nombre 
+   * 
+   * @param bookName 
+   * @returns 
+   */
   getBookApi(bookName: string){
     return this.http
-      .get(`https://www.googleapis.com/books/v1/volumes?q=${bookName}`)
+      .get(`${this.url}?q=${bookName}&maxResults=40`)
       .pipe(
         map(
           (result:any) => result.items
@@ -167,7 +177,15 @@ export class BooksService {
       );
   }
 
+  /**
+   * getBookForIdApi
+   * 
+   * Consultar la informacion de un libro en especifico del API
+   * 
+   * @param bookId 
+   * @returns 
+   */
   getBookForIdApi(bookId: string){
-    return this.http.get(`https://www.googleapis.com/books/v1/volumes/${bookId}`);
+    return this.http.get(`${this.url}/${bookId}`);
   }
 }

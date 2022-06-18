@@ -11,6 +11,7 @@ import { BooksListComponent } from './components/books-list/books-list.component
 
 import { BooksService } from './services/books.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BooksViewComponent } from './components/books-view/books-view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavigationComponent,
     BooksSearchComponent,
     BooksListComponent,
-    routingComponents
+    routingComponents,
+    BooksViewComponent
   ],
   imports: [
     BrowserModule,

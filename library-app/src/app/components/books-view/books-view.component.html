@@ -1,0 +1,53 @@
+<div class="container mb-5">
+    <h1 class="mt-5 mb-3">Información del libro</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-6">
+        <div class="row g-3" *ngIf="errorMsg">
+          <div class="col-12">
+            <div class="alert alert-danger" role="alert">
+              Este libro no existe
+            </div>
+          </div>
+        </div>
+          <div class="row g-3" *ngIf="!errorMsg">
+            <div class="col-12">
+              <label for="title" class="form-label w-100 fw-bold">Titulo</label>
+              <span class="w-100">{{ infoForm.title }}</span>
+            </div>
+  
+            <div class="col-12">
+              <label for="subtitle" class="form-label w-100 fw-bold">Subtitulo</label>
+              <span class="w-100">{{ infoForm.subtitle }}</span>
+            </div>
+  
+            <div class="col-12">
+              <label for="author" class="form-label w-100 fw-bold">Autor</label>
+              <span class="w-100">{{ infoForm.author }}</span>
+            </div>
+  
+            <div class="col-12">
+              <label for="category" class="form-label w-100 fw-bold">Categoria</label>
+              <span class="w-100">{{ infoForm.category }}</span>
+            </div>
+  
+            <div class="col-12">
+              <label for="date" class="form-label w-100 fw-bold">Fecha de publicación</label>
+              <span class="w-100">{{ infoForm.date }}</span>
+            </div>
+  
+            <div class="col-12">
+              <label for="description" class="form-label w-100 fw-bold">Descripción</label>
+              <span class="w-100 text-justify">{{ infoForm.description }}</span>
+            </div>
+          </div>
+  
+          <hr class="my-4" />
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="w-100 btn btn-light btn-lg" type="button"  [routerLink]="['/']">
+              Regresar
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+  
