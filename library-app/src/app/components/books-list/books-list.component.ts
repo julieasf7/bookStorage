@@ -2,6 +2,8 @@ import { Book } from './../../interface/book';
 import { Component, OnInit } from '@angular/core';
 
 import { BooksService } from '../../services/books.service';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-books-list',
@@ -12,12 +14,15 @@ export class BooksListComponent implements OnInit {
 
   rows: Book[] = [];
   dataApi: boolean = false;
+  title: string = environment.apiUrl
+
 
   constructor(
     public booksService: BooksService
   ) { }
 
   ngOnInit(): void {
+    console.log(this.title);
     this.rows = this.booksService.getAllBook();
   }
 
